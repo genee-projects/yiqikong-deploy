@@ -24,5 +24,12 @@ subscribers:
         routing_keys:
           - control
         callback:
-          url: http://192.168.0.20/api
+          url: http://yiqikong-control.wine.genee.cn/api
           method: yiqikong/control/getNotified
+      - exchange: YiQiKong
+        type: topic
+        routing_keys:
+          - directory
+        callback:
+          url: http://yiqikong-directory.wine.genee.cn/api
+          method: YiQiKong/Directory/createEquipment
