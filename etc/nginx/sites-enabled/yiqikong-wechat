@@ -31,7 +31,7 @@ server {
             fastcgi_pass yiqikong-wechat.docker.local:9000;
             fastcgi_index index.php;
             fastcgi_param PATH_INFO $fastcgi_path_info;
-            fastcgi_param GINI "@testing";
+            fastcgi_param GINI "testing";
 
             include fastcgi_params;
         }
