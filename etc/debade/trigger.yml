@@ -1,0 +1,28 @@
+mq:
+  host: yiqikong-rabbitmq.docker.local
+  port: 5672
+  username: guest
+  password: guest
+debug: true
+subscribers:
+  Lims-CF:
+    secret: YOURSECRET
+    channels:
+      - exchange: Lims-CF
+        type: topic
+        routing_keys:
+          - tju
+          - Lims-CF
+        callback:
+          url: http://192.168.0.20:54108/lims/api
+          method: debade
+  YiQiKong:
+    secret: YOURSECRET
+    channels:
+      - exchange: YiQiKong
+        type: topic
+        routing_keys:
+          - control
+        callback:
+          url: http://192.168.0.20/api
+          method: yiqikong/control/getNotified

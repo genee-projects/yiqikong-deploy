@@ -1,0 +1,15 @@
+servers:
+  Lims-CF:  #queue 名称
+    host: yiqikong-rabbitmq.docker.local
+    port: 5672
+    type: topic
+    username: guest
+    password: guest
+    exchange: Lims-CF
+  YiQiKong:  #queue 名称
+    host: yiqikong-rabbitmq.docker.local
+    port: 5672
+    type: topic
+    username: guest
+    password: guest
+    exchange: YiQiKong
