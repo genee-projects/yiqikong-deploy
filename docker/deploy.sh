@@ -31,6 +31,8 @@ update_wine_dnsmasq() {
     echo "address=/yiqikong-reserve.wine.genee.cn/192.168.0.20" >> /etc/dnsmasq.d/yiqikong
     echo "address=/yiqikong-wechat.wine.genee.cn/192.168.0.20" >> /etc/dnsmasq.d/yiqikong
     echo "address=/yiqikong-control.wine.genee.cn/192.168.0.20" >> /etc/dnsmasq.d/yiqikong
+    echo "address=/yiqikong-web.wine.genee.cn/192.168.0.20" >> /etc/dnsmasq.d/yiqikong
+    echo "address=/yiqikong-directory.wine.genee.cn/192.168.0.20" >> /etc/dnsmasq.d/yiqikong
 
     service dnsmasq restart
 
