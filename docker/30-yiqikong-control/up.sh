@@ -12,3 +12,14 @@ docker run \
     --hostname yiqikong-control \
     --name yiqikong-control \
     genee/gini:latest
+
+docker exec yiqikong-control bash -c '
+    . /etc/profile
+    export GINI_ENV="testing"
+    cd /data/gini-modules/yiqikong-control
+    gini composer init -n
+    composer update --prefer-dist
+    gini install
+    gini cache
+    gini web update
+'

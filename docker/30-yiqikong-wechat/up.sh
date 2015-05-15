@@ -12,3 +12,14 @@ docker run \
     --hostname yiqikong-wechat \
     --name yiqikong-wechat \
     genee/gini:latest
+
+docker exec yiqikong-wechat bash -c '
+    . /etc/profile
+    export GINI_ENV="testing"
+    cd /data/gini-modules/yiqikong-wechat
+    gini composer init -n
+    composer update --prefer-dist
+    gini install
+    gini cache
+    gini web update
+'
