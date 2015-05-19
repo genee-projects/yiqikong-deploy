@@ -33,3 +33,24 @@ subscribers:
         callback:
           url: http://yiqikong-directory.wine.genee.cn/api
           method: YiQiKong/Directory/createEquipment
+      - exchange: YiQiKong
+        type: topic
+        routing_keys:
+          - record
+        callback:
+          url: http://yiqikong-record.wine.genee.cn/api
+          method: YiQiKong/Record/getNotified
+      - exchange: YiQiKong
+        type: topic
+        routing_keys:
+          - reserve
+        callback:
+          url: http://yiqikong-reserve.wine.genee.cn/api
+          method: YiQiKong/Reserve/getNotified
+      - exchange: YiQiKong
+        type: topic
+        routing_keys:
+          - sample
+        callback:
+          url: http://yiqikong-sample.wine.genee.cn/api
+          method: YiQiKong/Sample/getNotified
