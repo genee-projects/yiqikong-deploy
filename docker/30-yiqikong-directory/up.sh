@@ -2,6 +2,8 @@
 
 update-docker-dnsmasq > /dev/null
 
+mysql -h yiqikong-mysql.docker.local -ugenee -p83719730 -e "CREATE DATABASE yiqikong_directory"
+
 docker run \
     -P \
     -d \
@@ -21,5 +23,6 @@ docker exec yiqikong-directory bash -c '
     composer update --prefer-dist
     gini install
     gini cache
+    gini orm update
     gini web update
 '

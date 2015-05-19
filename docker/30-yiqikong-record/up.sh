@@ -2,7 +2,7 @@
 
 update-docker-dnsmasq > /dev/null
 
-mysql -h yiqikong-mysql.docker.local -ugenee -p83719730 -e "CREATE DATABASE yiqikong_reserve"
+mysql -h yiqikong-mysql.docker.local -ugenee -p83719730 -e "CREATE DATABASE yiqikong_record"
 
 docker run \
     -P \
@@ -11,14 +11,14 @@ docker run \
     -v /home/genee/yiqikong/data/gini-modules/:/data/gini-modules/ \
     --dns 172.17.42.1 \
     --restart always \
-    --hostname yiqikong-reserve \
-    --name yiqikong-reserve \
+    --hostname yiqikong-record \
+    --name yiqikong-record \
     genee/gini:latest
 
-docker exec yiqikong-reserve bash -c '
+docker exec yiqikong-record bash -c '
     . /etc/profile
     export GINI_ENV="testing"
-    cd /data/gini-modules/yiqikong-reserve
+    cd /data/gini-modules/yiqikong-record
     gini composer init -n
     composer update --prefer-dist
     gini install

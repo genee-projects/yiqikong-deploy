@@ -4,17 +4,17 @@ map $request_uri $path_info {
 
 server {
 
-    server_name wx-test.genee.cn yiqikong-wechat.wine.genee.cn;
+    server_name yiqikong-sample.wine.genee.cn;
     root /data/gini/web/;
     index index.php index.html index.htm;
 
     location ~ \.php$ {
-        fastcgi_pass yiqikong-wechat.docker.local:9000;
+        fastcgi_pass yiqikong-sample.docker.local:9000;
         include fastcgi_params;
     }
 
     location / {
-        alias /data/gini-modules/yiqikong-wechat/web/;
+        alias /data/gini-modules/yiqikong-sample/web/;
 
         #该配置需要在rewrite之前, 避免错误rewrite
         location ~* \.(eot|ttf|woff)$ {
@@ -28,7 +28,7 @@ server {
         location ~ \.php {
             fastcgi_split_path_info ^(.+\.php)(/.+)$;
 
-            fastcgi_pass yiqikong-wechat.docker.local:9000;
+            fastcgi_pass yiqikong-sample.docker.local:9000;
             fastcgi_index index.php;
             fastcgi_param PATH_INFO $fastcgi_path_info;
             fastcgi_param GINI_ENV "testing";
