@@ -2,7 +2,7 @@
 
 update-docker-dnsmasq > /dev/null
 
-mysql -h yiqikong-mysql.docker.local -ugenee -p83719730 -e "CREATE DATABASE yiqikong_directory"
+mysql -h yiqikong-mysql.docker.local -ugenee -p83719730 -e "CREATE DATABASE IF NOT EXISTS yiqikong_directory"
 
 docker run \
     -P \

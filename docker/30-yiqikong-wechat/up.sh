@@ -22,4 +22,6 @@ docker exec yiqikong-wechat bash -c '
     gini install
     gini cache
     gini web update
+    mkdir /tmp/yiqikong-wechat
+    chown -R www-data:www-data /tmp/yiqikong-wechat
 '
