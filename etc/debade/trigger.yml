@@ -54,3 +54,10 @@ subscribers:
         callback:
           url: http://yiqikong-sample.wine.genee.cn/api
           method: YiQiKong/Sample/getNotified
+      - exchange: YiQiKong
+        type: topic
+        routing_keys:
+          - wechat
+        callback:
+          url: http://yiqikong-wechat.wine.genee.cn/api
+          method: Wechat/TmplMsg/send
