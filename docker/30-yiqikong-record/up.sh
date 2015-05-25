@@ -8,7 +8,7 @@ docker run \
     -P \
     -d \
     -v /dev/log:/dev/log \
-    -v /home/genee/yiqikong/data/gini-modules/:/data/gini-modules/ \
+    -v "$workdir/gini-modules/":/data/gini-modules/ \
     --dns 172.17.42.1 \
     --restart always \
     --hostname yiqikong-record \

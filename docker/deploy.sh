@@ -1,5 +1,7 @@
 #!/bin/bash
 
+workdir=$(dirname `pwd`)
+
 usage() {
     echo " ======================================================================="
     echo "|                                                                       |"
@@ -19,7 +21,7 @@ work() {
     do
         if [ -d "$app" ] && [ -f "$app/$file" ]; then
             echo "$app do $file ing..."
-            ./$app/$file
+            . ./$app/$file
             echo "====="
         fi
     done
@@ -33,9 +35,10 @@ update_wine_dnsmasq() {
     echo "address=/yiqikong-control.wine.genee.cn/192.168.0.20" >> /etc/dnsmasq.d/yiqikong
     echo "address=/yiqikong-web.wine.genee.cn/192.168.0.20" >> /etc/dnsmasq.d/yiqikong
     echo "address=/yiqikong-directory.wine.genee.cn/192.168.0.20" >> /etc/dnsmasq.d/yiqikong
+    echo "address=/yiqikong-gapper.wine.genee.cn/192.168.0.20" >> /etc/dnsmasq.d/yiqikong
+    echo "address=/wx-test.genee.cn/192.168.0.20" >> /etc/dnsmasq.d/yiqikong
 
     service dnsmasq restart
-
 }
 
 if [ $(id -u) -ne 0 ]; then
