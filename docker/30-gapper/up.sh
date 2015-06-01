@@ -27,4 +27,4 @@ docker exec yiqikong-gapper bash -c '
     gini web update
 '
 
-mysql -h yiqikong-mysql.docker.local -ugenee -p83719730 -e "USE gapper; INSERT INTO \`app\` VALUES ('testing','testing','testing','http://yiqikong-gapper.wine.genee.cn','http://yiqikong-gapper.wine.genee.cn/assets/icon/gapper.png','',0,'client_id','client_secret',1,'{}');"
+mysql -h yiqikong-mysql.docker.local -ugenee -p83719730 -e "USE gapper; INSERT INTO \`app\` VALUES ('testing','testing','testing','http://yiqikong-gapper.wine.genee.cn','http://yiqikong-gapper.wine.genee.cn/assets/icon/gapper.png','service',0,'client_id','client_secret',1,'{}');"
