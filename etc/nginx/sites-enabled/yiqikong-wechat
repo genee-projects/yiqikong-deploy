@@ -8,8 +8,11 @@ server {
     root /data/gini/web/;
     index index.php index.html index.htm;
 
+    resolver 172.17.42.1;
+    set $wechat "yiqikong-wechat.docker.local:9000";
+
     location ~ \.php$ {
-        fastcgi_pass yiqikong-wechat.docker.local:9000;
+        fastcgi_pass $wechat;
         include fastcgi_params;
     }
 
@@ -28,10 +31,9 @@ server {
         location ~ \.php {
             fastcgi_split_path_info ^(.+\.php)(/.+)$;
 
-            fastcgi_pass yiqikong-wechat.docker.local:9000;
+            fastcgi_pass $wechat;
             fastcgi_index index.php;
             fastcgi_param PATH_INFO $fastcgi_path_info;
-            fastcgi_param GINI_ENV "testing";
 
             include fastcgi_params;
         }
