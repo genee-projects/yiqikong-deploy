@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mysql -h yiqikong-mysql.docker.local -ugenee -p83719730 -e "CREATE DATABASE IF NOT EXISTS yiqikong_wechat"
+
 update-docker-dnsmasq > /dev/null
 
 docker run \
@@ -21,6 +23,7 @@ docker exec yiqikong-wechat bash -c '
     composer update --prefer-dist
     gini install
     gini cache
+    gini orm update
     gini web update
     mkdir /tmp/yiqikong-wechat
     chown -R www-data:www-data /tmp/yiqikong-wechat
