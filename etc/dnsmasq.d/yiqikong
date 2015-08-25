@@ -6,5 +6,6 @@ address=/yiqikong-directory.wine.genee.cn/192.168.0.20
 address=/yiqikong-gapper.wine.genee.cn/192.168.0.20
 address=/yiqikong-sample.wine.genee.cn/192.168.0.20
 address=/yiqikong-record.wine.genee.cn/192.168.0.20
+address=/yiqikong-billing.wine.genee.cn/192.168.0.20
 address=/wx-test.genee.cn/192.168.0.20
 address=/redis.gapper.in/192.168.0.20
